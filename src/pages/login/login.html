@@ -1,0 +1,24 @@
+<ion-header no-border padding>
+    <ion-toolbar>
+      <ion-title><div>LOGIN</div></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Usuario</ion-label>
+      <ion-input type="number" placeholder="Usuario" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Contraseña</ion-label>
+        <ion-input type="password" placeholder="Contraseña" value=""></ion-input>
+    </ion-item>
+
+    <button ion-button block color="primary" (click)="login()">Iniciar Sesión</button>
+
+  </ion-list>
+</ion-content>

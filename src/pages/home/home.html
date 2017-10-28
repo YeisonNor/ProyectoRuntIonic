@@ -1,14 +1,45 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      VEHICULOS
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-refresher (ionRefresh)="recargar_vehiculos($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list reorder="true">
+    <ion-item-sliding *ngFor="let vehiculo of vehiculos; let i= index">
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="get_ruta_icono(vehiculo.marca)">
+        </ion-avatar>
+        <h2>{{ vehiculo.marca }} {{ vehiculo.linea }}</h2>
+        <h6>{{ vehiculo.placa }}</h6>
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button color="primary" (click)="mostrar_datos_vehiculo(vehiculo)">
+          <ion-icon name="ios-information-circle-outline"></ion-icon>
+          Datos
+        </button>
+      </ion-item-options>
+
+      <ion-item-options side="right">
+          <button ion-button color="danger" (click)="mostrar_formulario_soat(vehiculo)">
+            <ion-icon name="clipboard"></ion-icon>
+            Soat
+          </button>
+          <button ion-button color="secondary" (click)="mostrar_formulario_tecno(vehiculo)">
+            <ion-icon name="build"></ion-icon>
+            Tecno
+          </button>
+  
+        </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
 </ion-content>
