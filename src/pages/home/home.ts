@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Refresher } from 'ionic-angular';
 import { Vehiculo } from '../../interfaces/vehiculo.Interface';
-import { VEHICULOS } from '../../data/data.vehiculos';
+//import { VEHICULOS } from '../../data/data.vehiculos';
 import { AlertController, LoadingController } from 'ionic-angular';
 import { HomeServicesProvider } from "../../providers/home-services/home-services";
 
@@ -25,13 +25,13 @@ export class HomePage
 
 
   constructor(public alertCtrl: AlertController, public loadingCtrl: LoadingController, public homeProvider: HomeServicesProvider) {
-    this.vehiculos = VEHICULOS.slice(0);
+    //this.vehiculos = VEHICULOS.slice(0);
 
-    /*this.loading = this.loadingCtrl.create({
+    this.loading = this.loadingCtrl.create({
       content: '<ion-spinner></ion-spinner>'
     });
     
-    this.getData();*/
+    this.getData();
   }
 
   
